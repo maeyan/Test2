@@ -6,10 +6,10 @@ orbs:
 workflows:
   integration-tests:
     jobs:
-      - browser-tests
+      - ClassLibrary
 
 jobs:
-  browser-tests:
+  ClassLibrary:
     executor:
       name: win/default
     steps:
