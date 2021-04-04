@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.4.0
+
+workflows:
+  integration-tests:
+    jobs:
+      - browser-tests
+
+jobs:
+  browser-tests:
+    executor:
+      name: win/default
+    steps:
+      - checkout
+      - run:
+          name: Run browser tests
+          command: |
+              cd SampleCode/SampleCodeTest
+              dotnet test
